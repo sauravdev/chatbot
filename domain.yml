@@ -1,0 +1,113 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- hello_world
+- more_info
+- question
+- good
+- gr
+- sendemail
+- ask_email
+- topic_wise
+- search_content
+- introductory
+- machine_learning
+- deep_learning
+- search_topic
+- hgreet
+
+entities:
+- document
+- email
+
+slots:
+  document:
+    type: text
+  email:
+    type: text
+  email_message:
+    type: text
+  topic:
+    type: unfeaturized
+    auto_fill: false
+responses:
+  utter_greet:
+  - text: Hey! How are you? I am the beingdatum chatbot, how are you today?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_hello_world:
+  - text: This is a a chatbot for the restaurant which restaurant that you want
+  utter_anthingelse:
+  - text: Is there any thing else sir?
+  utter_city:
+  - text: which city you want to check for?
+  utter_temp:
+  - text: Today's temperature is {temp} degree Celcius.
+  utter_info:
+  - text: 'Here is the link to our website: https://beingdatum.com/'
+  utter_askquestion:
+  - text: May I know What topic info are you looking for?
+  utter_email:
+  - text: Yes,what is your email id?
+  utter_confirm_email:
+  - text: An email has been sent to you?z
+
+  utter_greets:
+  - buttons:
+    - payload: /topic_wise
+      title: Study Topic Wise
+    - payload: /search_content
+      title: Search Content
+    text: Hi! To start your journey to learn Data Science please select an option
+  utter_topic:
+  - buttons:
+    - payload: /introductory
+      title: Introduction
+    - payload: /machine_learning
+      title: Machine Learning
+    - payload: /deep_learning
+      title: Deep Learning
+    text: Please select an source from below
+  utter_ask_topic:
+  - text: Please enter a topic to search
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_hello_world
+- utter_anthingelse
+- utter_thanks
+- utter_info
+- utter_askquestion
+- action_question
+- utter_email
+- action_send_email
+- utter_confirm_email
+- utter_greets
+- utter_topic
+- action_introductory
+- action_machine_learning
+- action_deep_learning
+- action_topic_search
+- utter_ask_topic
+- action_questions
